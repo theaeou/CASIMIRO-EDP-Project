@@ -24,6 +24,7 @@ namespace CompanyManagementSystem
             this.btnDeleteSalary.Click += new System.EventHandler(this.btnDeleteSalary_Click);
             this.btnGenerateReport.Click += new System.EventHandler(this.btnGenerateReport_Click);
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged); // <-- Add this line
+            this.btnGenerateUserReport.Click += new System.EventHandler(this.btnGenerateUserReport_Click);
         }
 
         private void LoadDepartments()
@@ -448,6 +449,30 @@ namespace CompanyManagementSystem
         {
             string searchText = textBox1.Text.Trim();
             SearchSalaries(searchText);
+        }
+
+        private void btnGenerateUserReport_Click(object sender, EventArgs e)
+        {
+            // Get the current DataTable from the DataGridView
+            var dt = dataGridView1.DataSource as DataTable;
+            if (dt == null || dt.Rows.Count == 0)
+            {
+                MessageBox.Show("No data to export.", "No Data", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            using (var sfd = new SaveFileDialog() { Filter = "Excel Workbook|*.xlsx" })
+            {
+                if (sfd.ShowDialog() == DialogResult.OK)
+                {
+                    using (var wb = new XLWorkbook())
+                    {
+                        wb.Worksheets.Add(dt.Copy(), "UsersReport");
+                        wb.SaveAs(sfd.FileName);
+                    }
+                    MessageBox.Show("User report exported successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
         }
     }
 }

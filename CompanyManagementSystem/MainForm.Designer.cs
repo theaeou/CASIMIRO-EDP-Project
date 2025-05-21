@@ -50,13 +50,14 @@
             this.btnAddUser = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tabSalaries = new System.Windows.Forms.TabPage();
+            this.button3 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.btnGenerateReport = new System.Windows.Forms.Button();
             this.btnDeleteSalary = new System.Windows.Forms.Button();
             this.btnEditSalary = new System.Windows.Forms.Button();
             this.btnAddSalary = new System.Windows.Forms.Button();
             this.dgvSalaries = new System.Windows.Forms.DataGridView();
-            this.button3 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btnGenerateUserReport = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLogs)).BeginInit();
@@ -244,6 +245,7 @@
             // 
             // dgvUserManagement
             // 
+            this.dgvUserManagement.Controls.Add(this.btnGenerateUserReport);
             this.dgvUserManagement.Controls.Add(this.btnSearch);
             this.dgvUserManagement.Controls.Add(this.txtSearch);
             this.dgvUserManagement.Controls.Add(this.btnDeleteUser);
@@ -279,7 +281,7 @@
             // 
             // btnDeleteUser
             // 
-            this.btnDeleteUser.Location = new System.Drawing.Point(422, 500);
+            this.btnDeleteUser.Location = new System.Drawing.Point(311, 500);
             this.btnDeleteUser.Name = "btnDeleteUser";
             this.btnDeleteUser.Size = new System.Drawing.Size(166, 54);
             this.btnDeleteUser.TabIndex = 20;
@@ -289,7 +291,7 @@
             // 
             // btnEditUser
             // 
-            this.btnEditUser.Location = new System.Drawing.Point(661, 500);
+            this.btnEditUser.Location = new System.Drawing.Point(550, 500);
             this.btnEditUser.Name = "btnEditUser";
             this.btnEditUser.Size = new System.Drawing.Size(166, 54);
             this.btnEditUser.TabIndex = 19;
@@ -299,7 +301,7 @@
             // 
             // btnAddUser
             // 
-            this.btnAddUser.Location = new System.Drawing.Point(182, 500);
+            this.btnAddUser.Location = new System.Drawing.Point(71, 500);
             this.btnAddUser.Name = "btnAddUser";
             this.btnAddUser.Size = new System.Drawing.Size(166, 54);
             this.btnAddUser.TabIndex = 18;
@@ -337,6 +339,23 @@
             this.tabSalaries.TabIndex = 4;
             this.tabSalaries.Text = "Salary";
             this.tabSalaries.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(865, 12);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 31;
+            this.button3.Text = "Search";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click_1);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(561, 14);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(297, 22);
+            this.textBox1.TabIndex = 30;
             // 
             // btnGenerateReport
             // 
@@ -388,22 +407,14 @@
             this.dgvSalaries.Size = new System.Drawing.Size(871, 430);
             this.dgvSalaries.TabIndex = 23;
             // 
-            // button3
+            // btnGenerateUserReport
             // 
-            this.button3.Location = new System.Drawing.Point(865, 12);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 31;
-            this.button3.Text = "Search";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click_1);
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(561, 14);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(297, 22);
-            this.textBox1.TabIndex = 30;
+            this.btnGenerateUserReport.Location = new System.Drawing.Point(775, 500);
+            this.btnGenerateUserReport.Name = "btnGenerateUserReport";
+            this.btnGenerateUserReport.Size = new System.Drawing.Size(166, 54);
+            this.btnGenerateUserReport.TabIndex = 30;
+            this.btnGenerateUserReport.Text = "Export";
+            this.btnGenerateUserReport.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 
@@ -464,6 +475,7 @@
         private System.Windows.Forms.Button btnGenerateReport;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button btnGenerateUserReport;
     }
 }
 

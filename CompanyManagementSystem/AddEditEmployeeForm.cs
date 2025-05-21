@@ -102,8 +102,6 @@ namespace CompanyManagementSystem
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            MainForm mainForm = new MainForm();
-            mainForm.ShowDialog(); // Show as a modal window
             this.Close(); // Close the current form
         }
 
